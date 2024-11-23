@@ -18,17 +18,15 @@ const stationeryProductSchema = new Schema<TProduct>({
     trim: true,
   },
   category: {
-    enum: {
-      values: [
+    type:String,
+    enum:  [
         'Writing',
         'Office Supplies',
         'Art Supplies',
         'Educational',
         'Technology',
       ],
-      message:
-        "The category field can only be one of the following: 'Writing','Office Supplies','Art Supplies','Educational','Technology'",
-    },
+      
   },
   description: {
     type: String,

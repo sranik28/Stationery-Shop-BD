@@ -2,13 +2,13 @@ export type TProduct = {
   name: string;
   brand: string;
   price: number;
-  category: [
+  category:
     | 'Writing'
     | 'Office Supplies'
     | 'Art Supplies'
     | 'Educational'
-    | 'Technology',
-  ];
+    | 'Technology';
+
   description: string;
   quantity: number;
   inStock: boolean;

@@ -12,10 +12,7 @@ export const stationeryProductSchema = z.object({
       'Educational',
       'Technology',
     ])
-    .refine((val) => val !== undefined, {
-      message:
-        "The 'category' field is required and must be one of the allowed values.",
-    }),
+    ,
   description: z.string().trim().min(1, "The 'description' field is required."),
   quantity: z
     .number()
