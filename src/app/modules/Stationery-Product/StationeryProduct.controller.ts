@@ -1,23 +1,18 @@
 import { Request, Response } from 'express';
 import { ProductService } from './StationeryProduct.service';
-import { stationeryProductSchema } from './StationeryProduct.validation';
+// import { stationeryProductSchema } from './StationeryProduct.validation';
+import { HandelApiSuccess } from '../../../utils/HandelApiSuccess';
+import { HandelApiError } from '../../../utils/HandelApiError';
 
 const createProduct = async (req: Request, res: Response) => {
   try {
     const product = req.body;
-    const zodValidation = stationeryProductSchema.parse(product);
-    const result = await ProductService.createProductIntoDB(zodValidation);
-    res.status(200).json({
-      success: true,
-      message: 'Product is created successfully',
-      data: result,
-    });
+    // const zodValidation = stationeryProductSchema.parse(product);
+    const result = await ProductService.createProductIntoDB(product);
+    HandelApiSuccess(res, 201, "Product created successfully!", result);
+    
   } catch (error) {
-    res.status(500).json({
-      success: false,
-      message: 'Something went wrong',
-      error: error,
-    });
+    HandelApiError(res, 500, "Failed to create product", error)
   }
 };
 
