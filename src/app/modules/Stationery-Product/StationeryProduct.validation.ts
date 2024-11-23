@@ -10,7 +10,7 @@ export const stationeryProductSchema = z.object({
       'Office Supplies',
       'Art Supplies',
       'Educational',
-      'Technology',
+      'Technology', 
     ])
     ,
   description: z.string().trim().min(1, "The 'description' field is required."),
