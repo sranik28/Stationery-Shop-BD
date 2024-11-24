@@ -9,10 +9,9 @@ const createProduct = async (req: Request, res: Response) => {
     const product = req.body;
     // const zodValidation = stationeryProductSchema.parse(product);
     const result = await ProductService.createProductIntoDB(product);
-    HandelApiSuccess(res, 201, "Product created successfully!", result);
-    
+    HandelApiSuccess(res, 201, 'Product created successfully!', result);
   } catch (error) {
-    HandelApiError(res, 500, "Failed to create product", error)
+    HandelApiError(res, 500, 'Failed to create product', error);
   }
 };
 
