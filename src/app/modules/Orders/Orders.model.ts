@@ -1,18 +1,18 @@
 import { model, Schema } from 'mongoose';
 import { TOrders } from './Orders.interface';
 
-
 const OrdersSchema = new Schema<TOrders>(
   {
     email: {
       type: String,
       required: true,
       trim: true,
+      match: /\S+@\S+\.\S+/,
     },
     product: {
-      type: String,
+      type: Schema.Types.ObjectId,
+      ref: 'Product',
       required: true,
-      trim: true,
     },
     quantity: {
       type: Number,
