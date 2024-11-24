@@ -1,8 +1,8 @@
-## Stationery Shop BD (stationery-shop-bd.vercel.app)
+# Stationery Shop BD (stationery-shop-bd.vercel.app)
 
 A full-stack application designed for managing a stationery shop. This app provides a robust backend using Node.js, Express, and MongoDB with a clean and maintainable codebase.
 
-# Features
+## Features
 
 -- Product Management: Add, update, delete, and view stationery items.
 -- User Management: Manage user accounts with authentication and validation.
@@ -11,7 +11,7 @@ A full-stack application designed for managing a stationery shop. This app provi
 -- Linting and Formatting: Includes ESLint and Prettier for maintaining code quality.
 -- Environment Variables: Uses dotenv for secure environment configurations.
 
-# Tech Stack
+## Tech Stack
 
 -- Backend: Node.js, Express
 -- Database: MongoDB, Mongoose
@@ -19,11 +19,11 @@ A full-stack application designed for managing a stationery shop. This app provi
 -- Development Tools: TypeScript, ESLint, Prettier
 -- Deployment: Compatible for both development and production environments.
 
-# Getting Started
+## Getting Started
 
 Follow the instructions below to set up the project locally.
 
-# Prerequisites
+## Prerequisites
 
 Make sure you have the following installed:
 -- Node.js (v16 or above)
