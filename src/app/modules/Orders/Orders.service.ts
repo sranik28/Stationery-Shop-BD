@@ -14,7 +14,7 @@ const createOrderIntoDB = async (orderData: TOrders) => {
   }
 
   if (!Number.isInteger(orderData.quantity) || orderData.quantity <= 0) {
-    throw new Error('Order quantity must be a positive integer');
+    throw new Error('Order quantity must be a positive number');
   }
 
   product.quantity = product.quantity - orderData.quantity;

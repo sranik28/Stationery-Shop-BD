@@ -51,7 +51,7 @@ const deleteProduct = async (req: Request, res: Response) => {
   try {
     const { productId } = req.params;
     await ProductService.deleteProductFromDB(productId);
-    HandelApiSuccess(res, 201, 'Product deleted successfully!', null);
+    HandelApiSuccess(res, 201, 'Product deleted successfully!', {});
   } catch (error) {
     HandelApiError(res, 500, 'Failed to delete product', error);
   }
