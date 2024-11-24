@@ -16,9 +16,9 @@ const createOrder = async (req: Request, res: Response) => {
 const revenue = async (req: Request, res: Response) => {
   try {
     const result = await OrdersService.getRevenue();
-    HandelApiSuccess(res, 200, 'Order created successfully!', result);
+    HandelApiSuccess(res, 200, 'Revenue calculated successfully', result);
   } catch (error) {
-    HandelApiError(res, 500, 'Failed to create order', error);
+    HandelApiError(res, 500, 'Failed to retrieve revenue', error);
   }
 };
 

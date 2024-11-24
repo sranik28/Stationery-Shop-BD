@@ -13,6 +13,10 @@ const createOrderIntoDB = async (orderData: TOrders) => {
     throw new Error('Insufficient quantity');
   }
 
+  if (!Number.isInteger(orderData.quantity) || orderData.quantity <= 0) {
+    throw new Error('Order quantity must be a positive integer');
+  }
+
   product.quantity = product.quantity - orderData.quantity;
   if (product.quantity === 0) {
     product.inStock = false;
@@ -29,13 +33,15 @@ const getRevenue = async () => {
     {
       $group: {
         _id: null,
-        totalRevenue: { $sum: '$totalPrice' },
+        totalRevenue: { $sum: { $multiply: ['$quantity', '$totalPrice'] } },
       },
     },
   ]);
-  const result = {
-    totalRevenue: revenueFromDB[0]?.totalRevenue,
-  };
+
+  const result = revenueFromDB[0]
+    ? { totalRevenue: revenueFromDB[0].totalRevenue }
+    : { totalRevenue: 0 };
+
   return result;
 };
 
